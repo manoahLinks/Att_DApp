@@ -1,0 +1,252 @@
+[
+    {
+      "type": "impl",
+      "name": "classCharacterv3",
+      "interface_name": "class_character::class_character_v3::IClassCharacter"
+    },
+    {
+      "type": "enum",
+      "name": "core::bool",
+      "variants": [
+        {
+          "name": "False",
+          "type": "()"
+        },
+        {
+          "name": "True",
+          "type": "()"
+        }
+      ]
+    },
+    {
+      "type": "struct",
+      "name": "core::integer::u256",
+      "members": [
+        {
+          "name": "low",
+          "type": "core::integer::u128"
+        },
+        {
+          "name": "high",
+          "type": "core::integer::u128"
+        }
+      ]
+    },
+    {
+      "type": "struct",
+      "name": "class_character::class_character_v3::Student",
+      "members": [
+        {
+          "name": "name",
+          "type": "core::felt252"
+        },
+        {
+          "name": "age",
+          "type": "core::integer::u8"
+        },
+        {
+          "name": "is_active",
+          "type": "core::bool"
+        },
+        {
+          "name": "has_reward",
+          "type": "core::bool"
+        },
+        {
+          "name": "xp_earnings",
+          "type": "core::integer::u256"
+        }
+      ]
+    },
+    {
+      "type": "interface",
+      "name": "class_character::class_character_v3::IClassCharacter",
+      "items": [
+        {
+          "type": "function",
+          "name": "set_owner",
+          "inputs": [
+            {
+              "name": "new_owner",
+              "type": "core::starknet::contract_address::ContractAddress"
+            }
+          ],
+          "outputs": [
+            {
+              "type": "core::bool"
+            }
+          ],
+          "state_mutability": "external"
+        },
+        {
+          "type": "function",
+          "name": "get_owner",
+          "inputs": [],
+          "outputs": [
+            {
+              "type": "core::starknet::contract_address::ContractAddress"
+            }
+          ],
+          "state_mutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "set_student",
+          "inputs": [
+            {
+              "name": "_studentAddr",
+              "type": "core::starknet::contract_address::ContractAddress"
+            },
+            {
+              "name": "_name",
+              "type": "core::felt252"
+            },
+            {
+              "name": "_age",
+              "type": "core::integer::u8"
+            },
+            {
+              "name": "_is_active",
+              "type": "core::bool"
+            },
+            {
+              "name": "_has_reward",
+              "type": "core::bool"
+            },
+            {
+              "name": "_xp_earnings",
+              "type": "core::integer::u256"
+            }
+          ],
+          "outputs": [
+            {
+              "type": "core::bool"
+            }
+          ],
+          "state_mutability": "external"
+        },
+        {
+          "type": "function",
+          "name": "get_student",
+          "inputs": [
+            {
+              "name": "studentAddr",
+              "type": "core::starknet::contract_address::ContractAddress"
+            }
+          ],
+          "outputs": [
+            {
+              "type": "class_character::class_character_v3::Student"
+            }
+          ],
+          "state_mutability": "view"
+        }
+      ]
+    },
+    {
+      "type": "impl",
+      "name": "classCharacterv3WithAccessControl",
+      "interface_name": "class_character::class_character_v3::IClassCharacterWithAccessControl"
+    },
+    {
+      "type": "interface",
+      "name": "class_character::class_character_v3::IClassCharacterWithAccessControl",
+      "items": [
+        {
+          "type": "function",
+          "name": "set_owner_with_access_control",
+          "inputs": [
+            {
+              "name": "new_owner",
+              "type": "core::starknet::contract_address::ContractAddress"
+            }
+          ],
+          "outputs": [
+            {
+              "type": "core::bool"
+            }
+          ],
+          "state_mutability": "external"
+        },
+        {
+          "type": "function",
+          "name": "get_owner_with_access_control",
+          "inputs": [],
+          "outputs": [
+            {
+              "type": "core::starknet::contract_address::ContractAddress"
+            }
+          ],
+          "state_mutability": "view"
+        },
+        {
+          "type": "function",
+          "name": "set_student_with_access_control",
+          "inputs": [
+            {
+              "name": "_studentAddr",
+              "type": "core::starknet::contract_address::ContractAddress"
+            },
+            {
+              "name": "_name",
+              "type": "core::felt252"
+            },
+            {
+              "name": "_age",
+              "type": "core::integer::u8"
+            },
+            {
+              "name": "_is_active",
+              "type": "core::bool"
+            },
+            {
+              "name": "_has_reward",
+              "type": "core::bool"
+            },
+            {
+              "name": "_xp_earnings",
+              "type": "core::integer::u256"
+            }
+          ],
+          "outputs": [
+            {
+              "type": "core::bool"
+            }
+          ],
+          "state_mutability": "external"
+        },
+        {
+          "type": "function",
+          "name": "get_student_with_access_control",
+          "inputs": [
+            {
+              "name": "student_addr",
+              "type": "core::starknet::contract_address::ContractAddress"
+            }
+          ],
+          "outputs": [
+            {
+              "type": "class_character::class_character_v3::Student"
+            }
+          ],
+          "state_mutability": "view"
+        }
+      ]
+    },
+    {
+      "type": "constructor",
+      "name": "constructor",
+      "inputs": [
+        {
+          "name": "_init_owner",
+          "type": "core::starknet::contract_address::ContractAddress"
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "name": "class_character::class_character_v3::ClassCharacterV3::Event",
+      "kind": "enum",
+      "variants": []
+    }
+  ]
