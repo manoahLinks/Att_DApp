@@ -98,7 +98,7 @@ const StudentForm = ({close, provider, abi, contractAddress}) => {
                             />
                         </div>
 
-                        <div className='flex flex-col gap-y-1'>
+                        {/* <div className='flex flex-col gap-y-1'>
                             <label htmlFor='' className='text-xs'>Is Active ?</label>
                             <div className='flex items-center gap-x-4'>
                                 <label className='text-xs' htmlFor="">true</label>
@@ -124,7 +124,7 @@ const StudentForm = ({close, provider, abi, contractAddress}) => {
                                 /> 
                             </div>
                             
-                        </div>
+                        </div> */}
 
                         <button 
                             onClick={handleSubmit}
