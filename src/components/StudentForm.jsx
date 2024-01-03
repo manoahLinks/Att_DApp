@@ -11,7 +11,8 @@ const StudentForm = ({close, provider, abi, contractAddress}) => {
         wallet: '',        
         name: '',
         age: '',
-        is_active: '',
+        is_active: true,
+        has_reward: false,
         xp_earnings: ''
     });
 
@@ -26,8 +27,8 @@ const StudentForm = ({close, provider, abi, contractAddress}) => {
 
         try {
 
-            const {wallet, name, age, is_active, xp_earnings} = student
-            await writeContract.set_student(wallet, name, age, is_active, true, xp_earnings)
+            const {wallet, name, age, is_active, has_reward, xp_earnings} = student
+            await writeContract.set_student(wallet, name, age, is_active, has_reward, xp_earnings)
             alert('succesfully added')
             
         } catch (error) {
