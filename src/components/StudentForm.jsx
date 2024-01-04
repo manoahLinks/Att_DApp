@@ -2,10 +2,13 @@ import { useState } from 'react';
 import {HiMiniXMark} from 'react-icons/hi2'
 import { toast } from 'react-toastify';
 import { Contract } from 'starknet';
+import Loading from './Loading';
 
 const StudentForm = ({close, provider, abi, contractAddress}) => {
     
     const writeContract = new Contract(abi, contractAddress, provider);
+
+    const [isPending, setIsPending] = useState(false)
 
     const [student, setStudent] = useState({
         wallet: '',        
@@ -24,14 +27,16 @@ const StudentForm = ({close, provider, abi, contractAddress}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setIsPending(true)
 
         try {
-
             const {wallet, name, age, is_active, has_reward, xp_earnings} = student
             await writeContract.set_student(wallet, name, age, is_active, has_reward, xp_earnings)
+            setIsPending(false)
             alert('succesfully added')
             
         } catch (error) {
+            setIsPending(false)
             alert(error.message)
             console.log(error)
         }
@@ -132,7 +137,7 @@ const StudentForm = ({close, provider, abi, contractAddress}) => {
                         >
                             Submit
                         </button>
-
+                        {isPending && <Loading/>}
                     </form>
                 </div>
                
