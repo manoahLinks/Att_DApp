@@ -133,9 +133,9 @@ const StudentForm = ({close, provider, abi, contractAddress}) => {
 
                         <button 
                             onClick={handleSubmit}
-                            className='p-2 bg-gradient-to-br mt-4 from-indigo-900 to-purple-400 hover:bg-opacity-50 text-white rounded-full  hover:rounded-md'
+                            className='p-2 bg-gradient-to-br mt-4 from-indigo-900 to-purple-400 hover:bg-opacity-50 text-white rounded-full hover:rounded-md'
                         >
-                            Submit
+                            {!isPending ? `Submit` : `Submitting ...`}
                         </button>
                         {isPending && <Loading/>}
                     </form>
